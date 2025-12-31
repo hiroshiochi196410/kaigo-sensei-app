@@ -20,12 +20,12 @@ export default async function handler(req, res) {
 
   try {
     // 環境変数からAPIキーを取得（ユーザーには見えない）
-    const apiKey = process.env.kaigo-sensei-indonesia;
+    const apiKey = process.env.ANTHROPIC_API_KEY;
 
     if (!apiKey) {
-      console.error('kaigo-sensei-indonesia is not set');
+      console.error('ANTHROPIC_API_KEY is not set');
       return res.status(500).json({ 
-        error: 'API key not configured. Please set kaigo-sensei-indonesia in Vercel environment variables.' 
+        error: 'API key not configured. Please set ANTHROPIC_API_KEY in Vercel environment variables.' 
       });
     }
 
